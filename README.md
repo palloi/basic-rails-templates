@@ -1,4 +1,9 @@
 basic-rails-templates
 =====================
 
-Tem a missão de implementar rotas e seus templates em rails. Cada template terá seus exemplos e padrões de como implementar javascript.  Sinta-se a vantade para utilizar ou implementar uma nova solução.  Obrigado
+Mission is to implement routes and their templates in rails.
+Each template will have its standards and examples of how to implement javascript.
+
+Feel vantade to use or implement a new solution.
+
+thank you
