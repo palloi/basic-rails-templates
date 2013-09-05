@@ -1,0 +1,48 @@
+<h2>Basic Template</h2>
+
+<p title="Olhar o arquivo basic.js">
+	Look at the file basic.js
+</p>
+
+<pre>
+var basic = {
+   init: function () {
+      // Sintax Highlight do Google Prettify
+      $('pre').addClass('prettyprint linenums');
+      
+      prettyPrint();
+   }
+};
+</pre>
+
+<p title="Adicionar depois de todos os js's sua chamada para inicializar o javascript da página.">
+	Add after all js's your call to initialize the javascript page.
+</p>
+
+<p>Ex:</p>
+
+<pre>
+$(document).ready(basic.init);
+</pre>
+
+<%content_for :js do%>
+  $(document).ready(basic.init);
+<%end%>
+
+<p><strong>Good side</strong></p>
+
+<p title="Assim sabemos que a inicialização está na página certa. Poderá utilizar funções em outras paginas utilizando o bind.">
+	So we know that the boot is on the right page.
+	<br />
+	You can use functions in other pages using the bind.
+</p>
+
+<p><strong>Bad side</strong></p>
+
+<p title="Funções acessiveis pelo console do browser. Todas a funções ficam facil de serem alteradas. Maliciosos podem tentar algo nada bom se o sistemas não estiver preparado corretamente">
+	Functions accessible from the console of browser.
+	<br />
+	All the functions are easy to be altered.
+	<br />
+	Attackers can try something no good if the systems are not properly prepared.
+</p>

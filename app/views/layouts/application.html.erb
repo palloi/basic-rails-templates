@@ -2,13 +2,43 @@
 <html>
 <head>
   <title>BasicRailsTemplates</title>
+  
+  <link rel="stylesheet" type="text/css" href="http://developer.locaweb.com.br/assets/1.1.8/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="http://developer.locaweb.com.br/assets/1.1.8/locastyle.css">
+	<link rel="stylesheet" type="text/css" href="http://developer.locaweb.com.br/wp-content/themes/devnet/js/prettify/src/prettycss.css">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<%= render "layouts/header" %>
+    
+  <div class="container content">
+  	<%= yield %>
+  </div>
 
-<%= yield %>
+  <%= render "layouts/footer" %>
+	
+	<script type="text/javascript" src="http://developer.locaweb.com.br/assets/1.1.8/locastyle.js"></script>
+	<script type="text/javascript" src="http://developer.locaweb.com.br/assets/1.1.8/bootstrap.js"></script>
+  <script type="text/javascript" src="http://developer.locaweb.com.br/wp-content/themes/devnet/js/prettify/src/prettify.js"></script>
+  
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 
+  <script type="text/javascript">
+	  <%= yield :js %>
+	</script>
+	
+	<script type="text/javascript">
+	  /*var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-XXXXXXX-XX']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();*/
+	</script>
 </body>
 </html>
