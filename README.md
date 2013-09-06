@@ -4,6 +4,16 @@ basic-rails-templates
 Mission is to implement routes and their templates in rails.
 Each template will have its standards and examples of how to implement javascript.
 
-Feel vantade to use or implement a new solution.
+Feel free to use or implement a new solution
 
-thank you
+Thank you
+
+Models
+------
+
+root '/'
+ template for application.html.erb
+ structure with javascript that always execute pages
+
+ basic '/basic'
+ structure for javascript with namespace
