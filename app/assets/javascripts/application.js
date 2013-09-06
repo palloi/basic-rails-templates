@@ -14,3 +14,17 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+Window.application = function() {
+	var init = function() {
+		// Sintax Highlight do Google Prettify
+    $('pre').addClass('prettyprint linenums');
+    
+    prettyPrint();
+	}
+
+	return {init: init}
+}();
+
+//start forever
+Window.application.init();

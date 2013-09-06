@@ -1,3 +1,26 @@
 <h2 title="Como tratar seu frontend desde o inicio com rails">
 	How to treat your frontend from the beginning with rails
 </h2>
+
+<p title="Como estruturar seu application.html.erb">
+	How to structure your application.html.erb
+</p>
+
+<p>
+	<strong>Head</strong>
+</p>
+
+<p title="Sempre colocar o application.css depois dos plugins ou framework">
+	Always put application.css after the plugins or framework
+</p>
+
+<pre>
+&lt;title&gt;BasicRailsTemplates&lt;/title&gt;
+  
+&lt;link rel="stylesheet" type="text/css" href="http://developer.locaweb.com.br/assets/1.1.8/bootstrap.css"&gt;
+&lt;link rel="stylesheet" type="text/css" href="http://developer.locaweb.com.br/assets/1.1.8/locastyle.css"&gt;
+  
+&lt;%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %&gt;
+
+&lt;%= csrf_meta_tags %&gt;
+</pre>
