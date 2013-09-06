@@ -24,3 +24,38 @@
 
 &lt;%= csrf_meta_tags %&gt;
 </pre>
+
+<p>
+  <strong>Body</strong>
+</p>
+
+<pre>
+&lt;%= render "layouts/header" %&gt;
+    
+&lt;div class="container content"&gt;
+  &lt;%= yield %&gt;
+&lt;/div&gt;
+
+&lt;%= render "layouts/footer" %&gt;
+  
+&lt;script type="text/javascript" src="http://developer.locaweb.com.br/assets/1.1.8/locastyle.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="http://developer.locaweb.com.br/assets/1.1.8/bootstrap.js"&gt;&lt;/script&gt;
+
+&lt;%= javascript_include_tag "application", "data-turbolinks-track" => true %&Gt;
+
+&lt;script type="text/javascript"&gt;
+&lt;%= yield :js %&gt;
+&lt;/script&gt;
+  
+  &lt;script type="text/javascript"&gt;
+    /*var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-XXXXXXX-XX']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();*/
+  &lt;/script&gt;
+</pre>

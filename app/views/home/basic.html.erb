@@ -25,10 +25,6 @@ var basic = {
 $(document).ready(basic.init);
 </pre>
 
-<%content_for :js do%>
-  $(document).ready(basic.init);
-<%end%>
-
 <p><strong>Good side</strong></p>
 
 <p title="Assim sabemos que a inicialização está na página certa. Poderá utilizar funções em outras paginas utilizando o bind.">
@@ -46,3 +42,7 @@ $(document).ready(basic.init);
 	<br />
 	Attackers can try something no good if the systems are not properly prepared.
 </p>
+
+<%content_for :js do%>
+  $(document).ready(basic.init);
+<%end%>
