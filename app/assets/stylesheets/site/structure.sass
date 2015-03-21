@@ -1,0 +1,62 @@
+@import "mixins"
+
+body
+  font-family: $raleway
+  font-size: 20px
+  line-height: 1
+  background: $gray
+
+.mid
+  max-width: 1024px
+  margin: 0 auto
+  padding: 0 10px
+
+.content
+  min-height: 100%
+  position: relative
+  overflow: hidden
+
+.content section h1
+
+.content section
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  padding-top: 80px
+  padding-bottom: 40px
+  opacity: 0
+  @include box-sizing()
+  @include transition(all 800ms cubic-bezier(0.86,0,0.07,1))
+  @include transform(translate(0, 200px) scale(0.8))
+
+  //active
+  &.on
+    opacity: 1
+    position: relative
+    @include transform(translate(0%, 0) scale(1))
+    @include tdelay(0.8s)
+
+  //inactive
+  &.off
+    opacity: 0
+    @include transform(translate(0%, -200px) scale(0.8))
+
+  //custom
+  h1
+    font-size: 30px
+
+  p
+    padding: 10px 0 20px
+    text-align: justify
+
+  img.fR
+    margin-left: 20px
+
+  img.fL
+    margin-right: 20px
+  //fim custom
+
+@media screen and (max-width: 846px)
+  .content section
+    padding-top: 60px

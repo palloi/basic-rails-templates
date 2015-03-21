@@ -1,0 +1,150 @@
+@import "mixins"
+
+header
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  padding: 20px 0
+  z-index: 3
+  background: $white
+  @include boxshadow(0 0 3px rgba(#f5f8f8, 0.5))
+  @include transition(all 300ms ease-in-out)
+
+header h2 a
+  color: $darkGray
+
+.nav
+  padding: 0 0 0 4px
+  @include transition(all 400ms $ease-out-quad)
+  @include transform(translate(0%, 0%))
+
+.nav li
+  float: left
+  padding-left: 55px
+
+.nav a
+  position: relative
+  display: block
+  padding: 4px 0 0
+  text-decoration: none
+  color: $darkGray
+  @include transition(all 300ms ease-in-out)
+
+  &:after
+    content: ""
+    display: block
+    height: 1px
+    background: #555
+    position: absolute
+    bottom: 0px
+    left: 50%
+    right: 50%
+    opacity: 0
+    @include transition(all 300ms ease-in-out)
+
+  &:hover,
+  &.on
+    color: $gray
+
+    &:after
+      left: 0
+      right: 2%
+      opacity: 1
+
+.control-nav-open
+  position: absolute
+  right: 10px
+  top: 20px
+  display: block
+  width: 40px
+  padding: 5px 0
+  border-top: 4px solid #999
+  border-bottom: 4px solid #999
+  cursor: pointer
+  z-index: 4
+  @include transition(all 400ms $ease-out-quad)
+
+  &:before
+    content: ""
+    display: block
+    height: 4px
+    background: #999
+
+.control-nav-close
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  background: rgba(0,0,0,0)
+  z-index: 2
+  @include transition(all 400ms $ease-out-quad)
+  @include transform(translate(100%, 0%))
+
+input#control_nav
+  position: fixed
+  top: 50%
+  left: -9999px
+  opacity: 0
+
+input#control_nav:focus ~ .nav
+  @include boxshadow(inset 0 0 8px rgba(16, 154, 239, 0.4))
+
+input#control_nav:focus ~ .control-nav-open
+  @include boxshadow(0 0 8px 2px rgba(16, 154, 239, 0.4))
+
+input#control_nav:checked ~ .nav
+  @include transform(translate(0%, 0%))
+
+input#control_nav:checked ~ .control-nav-open
+  border-color: $white
+  @include transform(translate(-190px, 0%))
+  
+  &:before
+    background: $white
+
+input#control_nav:checked ~ .control-nav-close
+  @include transform(translate(0%, 0%))
+  background: rgba(0,0,0,0.5)
+
+@media screen and (min-width: 840px)
+  input#control_nav ~ .control-nav-open
+    @include transform(translate(0, -50px))
+  input#control_nav:checked ~ .control-nav-close
+    @include transform(translate(100%, 0%))
+  input#control_nav
+    display: none
+
+@media screen and (max-width: 840px)
+  header
+    padding: 14px 0px
+
+  .nav
+    width: 180px
+    padding: 29px 0 0
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    background: $white
+    z-index: 3
+    @include boxshadow(0 0 8px rgba(0,0,0,0.4))
+    @include transform(translate(110%, 0%))
+
+  .nav li
+    width: 100%
+    padding: 0
+    border-top: 1px solid #f2f2f2
+
+  .nav a
+    display: block
+    padding: 10px 10px 8px
+    background: transparent
+    text-align: center
+
+    &:hover
+      background: #f2f2f2
+
+  .content section
+    padding-top: 70px

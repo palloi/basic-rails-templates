@@ -1,32 +1,19 @@
-<div class="navbar-wrapper">
-  <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
-  <div class="container">
+<header>
+  <div class="mid">
+    <h2 class="fL">
+      <%= link_to "Basic rails template", root_path, :"data-page" => "true" %>
+    </h2>
 
-    <div class="navbar navbar-inverse">
-      <div class="navbar-inner">
-        <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
-        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="brand" href="/">Basic rails templates JS</a>
-        <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
-        <div class="nav-collapse collapse">
-          <ul class="nav">
-            <li><a href="<%= root_path %>">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <!-- Read about Bootstrap dropdowns at http://twbs.github.com/bootstrap/javascript.html#dropdowns -->
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Templates<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="<%= basic_path %>">Basic</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div><!-- /.navbar-inner -->
-    </div><!-- /.navbar -->
-
-  </div> <!-- /.container -->
-</div><!-- /.navbar-wrapper -->
+    <input type="checkbox" id="control_nav" name="control_nav" />
+    <ul class="nav fR">
+      <li>
+        <%= link_to "About", about_path, :"data-page" => "true" %>
+      </li>
+      <li>
+        <%= link_to "Contact", contact_path, :"data-page" => "true"%>
+      </li>
+    </ul>
+    <label for="control_nav" class="control-nav-open"></label>
+    <label for="control_nav" class="control-nav-close"></label>
+  </div>
+</header>

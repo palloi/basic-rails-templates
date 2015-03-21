@@ -1,6 +1,7 @@
 BasicRailsTemplates::Application.routes.draw do
-  root 'home#index'
-  get '/basic', to: 'home#basic'
+  root 'site#index'
+  get "about/" => 'site#about', :as => "about"
+  get "contato/" => 'site#contact', :as => "contact"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

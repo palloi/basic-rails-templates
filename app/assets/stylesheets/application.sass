@@ -9,11 +9,187 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require_tree ./site
  */
 
-.navbar
-	margin-top: 10px
+@import "mixins"
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,100,900,800,700,600,500,300,200)
 
-.content
-	min-height: 75%
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  background: transparent
+  vertical-align: baseline
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section
+  display: block
+ 
+*
+  -webkit-backface-visibility: hidden
+
+html, body, .fix
+  &:after
+    content: ""
+    display: block
+    clear: both
+
+html, body
+  width: 100%
+  height: 100%
+ 
+ol, ul
+  list-style: none
+ 
+blockquote, q
+  quotes: none
+ 
+blockquote:before, blockquote:after,
+q:before, q:after
+  content: ''
+  content: none
+ 
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+.rpc
+  display: block
+  border: none
+  overflow: hidden
+  text-indent: -9999px
+  word-spacing: 999px
+.fL, .fR
+  display: block
+  position: relative
+  float: left
+.fR
+  float: right!important
+.fN
+  float: none!important
+.dMa
+  display: block!important
+  margin-left: auto!important
+  margin-right: auto!important
+  float: none!important
+.bB
+  border: none!important
+.dN 
+  display: none!important
+.dB
+  display: block
+.dIB
+  display: inline-block
+.dBi
+  display: block!important
+.dI
+  display: inline
+.dT
+  display: table
+.bgN
+  background: none!important
+.w100
+  width: 100%!important
+.cR
+  clear: right
+.cL
+  clear: left
+.cB
+  clear: both
+  display: block
+.cN
+  clear: none
+.hA
+  height: auto!important
+.wA
+  width: auto!important
+.oH
+  overflow: hidden!important
+.oV
+  overflow: visible!important
+.oA
+  overflow: auto!important
+.m0
+  margin: 0px!important
+.mL
+  margin-left: 0px!important
+.mB
+  margin-bottom: 0px!important
+.mT
+  margin-top: 0px!important
+.mR
+  margin-right: 0px!important
+.p0
+  padding: 0px!important
+.pL
+  padding-left: 0px!important
+.pB
+  padding-bottom: 0px!important
+.pT
+  padding-top: 0px!important
+.pR
+  padding-right: 0px!important
+.vH
+  visibility: hidden
+.l1, .l1 li, .l2, .l2 li
+  width: 100%
+  float: left
+  display: block
+  position: relative
+.l2,.l2 li
+  width: auto
+.tR
+  text-align: right
+.tC
+  text-align: center
+.tJ
+  text-align: justify
+.z1
+  z-index: 1
+  position: relative
+.z2
+  z-index: 2
+  position: relative
+.z3
+  z-index: 3
+  position: relative
+.z4
+  z-index: 4
+  position: relative
+.z5
+  z-index: 5
+  position: relative
+.z6
+  z-index: 6
+  position: relative
+
+.loading
+  position: fixed
+  top: 0
+  left: 0%
+  right: 100%
+  height: 3px
+  background: #000
+  z-index: 3
+  @include transition(all 1s cubic-bezier(0.86,0,0.07,1))
+
+  &.on
+    right: 0%
+
+  &.complete
+    left: 100%
